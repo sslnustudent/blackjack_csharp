@@ -18,6 +18,13 @@
               LastKnownName="Card"
               LastKnownLocation="Package1_0950.uml" />
           </dependency>
+          <dependency
+            Id="31c44e0d-8d5d-4306-8ba1-d2bef59f1385">
+            <classMoniker
+              Id="aa7ea3cd-67c8-4a88-9eec-e49fbc8cd2a2"
+              LastKnownName="MenuEvent"
+              LastKnownLocation="Package_0950.uml" />
+          </dependency>
         </suppliersInternal>
       </Interface>
     </packageHasNamedElement>
@@ -56,6 +63,14 @@
           </interfaceRealization>
         </suppliersInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aa7ea3cd-67c8-4a88-9eec-e49fbc8cd2a2"
+        name="MenuEvent"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

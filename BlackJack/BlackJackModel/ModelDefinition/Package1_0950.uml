@@ -309,6 +309,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="9593e18d-7e36-4eda-a704-58c6d67ba331">
+            <interfaceMoniker
+              Id="d0ca02c9-3c23-4623-9a33-52680dce85c7"
+              LastKnownName="CardDealtObserver"
+              LastKnownLocation="Package1_0950.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="4e104d3a-3dd0-4e57-b8cb-0ec9d65fa0ab"
@@ -382,6 +391,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="95dfd1c6-e08e-487b-a789-c3fc90340db1">
+            <interfaceMoniker
+              Id="d0ca02c9-3c23-4623-9a33-52680dce85c7"
+              LastKnownName="CardDealtObserver"
+              LastKnownLocation="Package1_0950.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="87296099-9a34-44e0-8455-4d19a7dd077d"
@@ -505,6 +523,13 @@
           </association>
         </targetEnds>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="d0ca02c9-3c23-4623-9a33-52680dce85c7"
+        name="CardDealtObserver"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

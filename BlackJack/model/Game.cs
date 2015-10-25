@@ -39,7 +39,7 @@ namespace BlackJack.model
         public bool Stand()
         {
             // TODO: Implement this according to Game_Stand.sequencediagram
-            return true;
+            return m_dealer.Stand(); 
         }
 
         public IEnumerable<Card> GetDealerHand()
@@ -60,6 +60,20 @@ namespace BlackJack.model
         public int GetPlayerScore()
         {
             return m_player.CalcScore();
+        }
+
+        public void RegisterSubscriber(CardDealtObserver a_observer, bool isDealer)
+        {
+            if(isDealer == false)
+            m_player.RegisterSubscriber(a_observer);
+            else
+            m_dealer.RegisterSubscriber(a_observer);
+        }
+
+        public void RemoveSubscriber(CardDealtObserver a_observer) 
+        {
+            m_player.RemoveSubcriber(a_observer);
+            m_dealer.RemoveSubcriber(a_observer);
         }
     }
 }

@@ -5,10 +5,11 @@ using System.Text;
 
 namespace BlackJack.controller
 {
-    class PlayGame
+    class PlayGame : model.CardDealtObserver
     {
         public bool Play(model.Game a_game, view.IView a_view)
         {
+          //  a_game.RegisterSubscriber(this);
             a_view.DisplayWelcomeMessage();
             
             a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
@@ -19,22 +20,40 @@ namespace BlackJack.controller
                 a_view.DisplayGameOver(a_game.IsDealerWinner());
             }
 
-            int input = a_view.GetInput();
+            view.MenuEvent input = a_view.GetInput();
 
-            if (input == 'p')
+            if (input == view.MenuEvent.play)
             {
                 a_game.NewGame();
             }
-            else if (input == 'h')
+            else if (input == view.MenuEvent.hit)
             {
+                a_game.RegisterSubscriber(this, false);
                 a_game.Hit();
+                a_game.RemoveSubscriber(this);
+
             }
-            else if (input == 's')
+            else if (input == view.MenuEvent.stand)
             {
-                a_game.Stand();
+                while (a_game.IsGameOver() == false)
+                {
+                     a_game.RegisterSubscriber(this, true);
+                     a_game.Stand();
+
+                     a_view.DisplayWelcomeMessage();
+
+                     a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
+                     a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+                     a_game.RemoveSubscriber(this);
+                }
             }
 
-            return input != 'q';
+            return input != view.MenuEvent.quit;
+        }
+
+        public void CardDealt()
+        {
+            System.Threading.Thread.Sleep(1500);
         }
     }
 }

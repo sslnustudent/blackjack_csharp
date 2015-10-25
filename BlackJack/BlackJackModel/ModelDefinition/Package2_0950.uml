@@ -101,8 +101,98 @@
               LastKnownName="BasicHitStrategy"
               LastKnownLocation="Package2_0950.uml" />
           </dependency>
+          <dependency
+            Id="32accc98-191b-42ec-a70f-7bcf58d0ecb6">
+            <classMoniker
+              Id="761a1035-cf61-46af-ad49-060058a57212"
+              LastKnownName="Soft17HitStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+          <dependency
+            Id="bdfdc279-8d89-45b6-a482-52c56bfa2d0e">
+            <classMoniker
+              Id="ac208eb5-7083-4bb4-9229-57eaf37d26df"
+              LastKnownName="PlayerWinnerStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+          <dependency
+            Id="429ae4c5-25c9-4b3d-951d-ebe462b09dbd">
+            <classMoniker
+              Id="6c94ec40-9287-4bdd-843f-68ef4a972860"
+              LastKnownName="DealerWinnerStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
         </suppliersInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="761a1035-cf61-46af-ad49-060058a57212"
+        name="Soft17HitStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1acb928a-932b-4292-92ba-408fcf8c2f7c">
+            <interfaceMoniker
+              Id="550cd927-6beb-4715-ac7e-1afec083ec6b"
+              LastKnownName="IHitStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b6d93ba4-b094-48b6-9fbe-d382fa1c62ed"
+        name="IWinnerStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6c94ec40-9287-4bdd-843f-68ef4a972860"
+        name="DealerWinnerStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="e386650a-88c8-4d0e-8473-cf14e88daa81">
+            <interfaceMoniker
+              Id="a9384cf5-f194-4ec2-9d59-b5cacf69a454"
+              LastKnownName="IWinnerStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ac208eb5-7083-4bb4-9229-57eaf37d26df"
+        name="PlayerWinnerStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f0642beb-b8fe-41a4-b9d1-c89959d0ac0d">
+            <interfaceMoniker
+              Id="a9384cf5-f194-4ec2-9d59-b5cacf69a454"
+              LastKnownName="IWinnerStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="a9384cf5-f194-4ec2-9d59-b5cacf69a454"
+        name="IWinnerStrategy"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
