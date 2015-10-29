@@ -7,45 +7,50 @@ namespace BlackJack.controller
 {
     class PlayGame : model.CardDealtObserver
     {
-        public bool Play(model.Game a_game, view.IView a_view)
+        private model.Game c_game;
+        private view.IView c_view;
+
+        public PlayGame(model.Game a_game, view.IView a_view)
+        {
+            c_game = a_game;
+            c_view = a_view;
+        }
+
+        public bool Play()
         {
           //  a_game.RegisterSubscriber(this);
-            a_view.DisplayWelcomeMessage();
-            
-            a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-            a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+            c_view.DisplayWelcomeMessage();
 
-            if (a_game.IsGameOver())
+            c_view.DisplayDealerHand(c_game.GetDealerHand(), c_game.GetDealerScore());
+            c_view.DisplayPlayerHand(c_game.GetPlayerHand(), c_game.GetPlayerScore());
+
+            if (c_game.IsGameOver())
             {
-                a_view.DisplayGameOver(a_game.IsDealerWinner());
+                c_view.DisplayGameOver(c_game.IsDealerWinner());
             }
 
-            view.MenuEvent input = a_view.GetInput();
+            view.MenuEvent input = c_view.GetInput();
 
             if (input == view.MenuEvent.play)
             {
-                a_game.NewGame();
+                c_game.RegisterSubscriber(this, false);
+                c_game.RegisterSubscriber(this, true);
+                c_game.NewGame();
+                c_game.RemoveSubscriber(this);
             }
             else if (input == view.MenuEvent.hit)
             {
-                a_game.RegisterSubscriber(this, false);
-                a_game.Hit();
-                a_game.RemoveSubscriber(this);
+                c_game.RegisterSubscriber(this, false);
+                c_game.Hit();
+                c_game.RemoveSubscriber(this);
 
             }
             else if (input == view.MenuEvent.stand)
             {
-                while (a_game.IsGameOver() == false)
-                {
-                     a_game.RegisterSubscriber(this, true);
-                     a_game.Stand();
-
-                     a_view.DisplayWelcomeMessage();
-
-                     a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-                     a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
-                     a_game.RemoveSubscriber(this);
-                }
+                c_game.RegisterSubscriber(this, true);
+                c_game.Stand();
+                c_game.RemoveSubscriber(this);
+                
             }
 
             return input != view.MenuEvent.quit;
@@ -54,6 +59,10 @@ namespace BlackJack.controller
         public void CardDealt()
         {
             System.Threading.Thread.Sleep(1500);
+            c_view.DisplayWelcomeMessage();
+
+            c_view.DisplayDealerHand(c_game.GetDealerHand(), c_game.GetDealerScore());
+            c_view.DisplayPlayerHand(c_game.GetPlayerHand(), c_game.GetPlayerScore());
         }
     }
 }

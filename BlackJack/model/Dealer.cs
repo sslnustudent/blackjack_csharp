@@ -51,7 +51,6 @@ namespace BlackJack.model
                 while(m_hitRule.DoHit(this))
                 {
                     GetACard(this);
-                    return true;
                 }
 
                 return true;
@@ -64,11 +63,11 @@ namespace BlackJack.model
             return m_winRule.IsDealerWinner(this, a_player, g_maxScore);
         }
 
-        public void GetACard(Player a_player) 
+        public void GetACard(Player a_player, bool show = true) 
         {
             Card c;
             c = m_deck.GetCard();
-            c.Show(true);
+            c.Show(show);
             a_player.DealCard(c);
         }
 

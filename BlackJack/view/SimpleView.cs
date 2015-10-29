@@ -19,18 +19,18 @@ namespace BlackJack.view
         {
             
             MenuEvent input;
-            switch (Console.ReadKey().KeyChar)
+            switch (Console.ReadKey().Key)
             {
-                case'p':
+                case ConsoleKey.P:
                     input = MenuEvent.play;
                     break;
-                case'h':
+                case ConsoleKey.H:
                     input = MenuEvent.hit;
                     break;
-                case's':
+                case ConsoleKey.S:
                     input = MenuEvent.stand;
                     break;
-                case'q':
+                case ConsoleKey.Q:
                     input = MenuEvent.quit;
                     break;
                 default:

@@ -226,6 +226,67 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="134f4d41-620b-4d74-adb2-cbc488f2137e"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName="m_winRule"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="a9384cf5-f194-4ec2-9d59-b5cacf69a454"
+              LastKnownName="IWinnerStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9cbf4fc1-31de-432d-b37e-7a69286eb7ae"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8f85b869-e61c-4868-9752-c402e762825e"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fbe0cb1e-226b-4d38-971c-58777f1d9d62"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8591b0ac-48b0-42e8-b82b-4b8d5f372c85"
+                  name="m_winRule"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bad58594-7335-471e-9aaf-f7176f9a1d4a"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ee0bceeb-78c3-48d1-b3a9-a7ee6c58eba6"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </class>
     </packageHasNamedElement>
